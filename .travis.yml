@@ -10,7 +10,7 @@ install:
   - git clone --depth 1 git://github.com/astropy/ci-helpers.git
   - source ci-helpers/travis/setup_conda.sh
 script:
-  - constrcutor constructor-cpu
+  - constructor constructor-cpu
   - constructor constructor-gpu
 before_deploy:
   - git config --local user.name "njzjz"
