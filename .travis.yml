@@ -22,5 +22,6 @@ deploy:
   api_key: $GITHUB_TOKEN
   file: deepmd-kit-*pu-Linux-x86_64.sh
   skip_cleanup: true
+  file_glob: true
   on:
     branch: master
