@@ -6,7 +6,7 @@ channels:
 - https://repo.anaconda.com/pkgs/main/
 
 specs:
-- deepmd-kit 1.1.4 *cuda10.1_gpu
+- deepmd-kit 1.1.4 *gpu
 - lammps-dp 1.1.4 *cuda10.1_gpu
 
 ignore_duplicate_files: True
