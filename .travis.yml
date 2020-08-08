@@ -12,6 +12,7 @@ matrix:
   include:
     - env:
       - NAME="deepmd-kit-cpu"
+    - env:
       - NAME="deepmd-kit-gpu"
 install:
   - git clone --depth 1 git://github.com/astropy/ci-helpers.git
