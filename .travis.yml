@@ -5,13 +5,19 @@ sudo: false
 envs:
   global:
     - CONDA_DEPENDENCIES=constructor
-    - PYTHON_VERSION=3.7
+    - PYTHON_VERSION=3.8
+    - VERSION=1.2.0
+    - CUDA_VERSION=10.1
+matrix:
+  include:
+    - env:
+      - NAME="deepmd-kit-cpu"
+      - NAME="deepmd-kit-gpu"
 install:
   - git clone --depth 1 git://github.com/astropy/ci-helpers.git
   - source ci-helpers/travis/setup_conda.sh
 script:
-  - constructor constructor-cpu
-  - constructor constructor-gpu
+  - constructor $NAME
 before_deploy:
   - git config --local user.name "njzjz"
   - git config --local user.email "jinzhe.zeng@rutgers.edu"
@@ -20,8 +26,10 @@ before_deploy:
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  file: deepmd-kit-*pu-Linux-x86_64.sh
+  file: deepmd-kit-*.sh
   skip_cleanup: true
   file_glob: true
   on:
+    repo: deepmd-kit-recipes/installer
     branch: master
+    tags: true
