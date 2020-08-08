@@ -1,0 +1,19 @@
+{% set version = os.environ.get("VERSION") %}
+
+name: deepmd-kit
+version: {{ version }}-cpu
+
+channels:
+- https://conda.anaconda.org/deepmodeling
+- https://repo.anaconda.com/pkgs/main/
+
+specs:
+- conda
+- deepmd-kit {{ version }} *cpu
+- lammps-dp {{ version }} *cpu
+- liblammps-dp {{ version }} *cpu
+- pylammps-dp {{ version }}
+
+ignore_duplicate_files: True
+
+license_file: ../LICENSE

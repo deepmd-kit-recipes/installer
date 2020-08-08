@@ -1,0 +1,20 @@
+{% set version = os.environ.get("VERSION") %}
+{% set cuda_version = os.environ.get("CUDA_VERSION") %}
+
+name: deepmd-kit
+version: {{ version }}-cuda{{ cuda_version }}_gpu
+
+channels:
+- https://conda.anaconda.org/deepmodeling
+- https://repo.anaconda.com/pkgs/main/
+
+specs:
+- conda
+- deepmd-kit {{ version }} *cuda{{ cuda_version }}_gpu
+- lammps-dp {{ version }} *cuda{{ cuda_version }}_gpu
+- liblammps-dp {{ version }} *cuda{{ cuda_version }}_gpu
+- pylammps-dp {{ version }}
+
+ignore_duplicate_files: True
+
+license_file: ../LICENSE
