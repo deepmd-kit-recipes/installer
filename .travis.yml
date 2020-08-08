@@ -4,7 +4,7 @@ os:
 sudo: false
 envs:
   global:
-    - CONDA_DEPENDENCIES=constructor
+    - CONDA_DEPENDENCIES="constructor jinja2"
     - PYTHON_VERSION=3.7
     - VERSION=1.2.0
 matrix:
