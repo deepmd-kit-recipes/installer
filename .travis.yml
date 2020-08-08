@@ -23,6 +23,7 @@ matrix:
 install:
   - git clone --depth 1 git://github.com/astropy/ci-helpers.git
   - source ci-helpers/travis/setup_conda.sh
+  - pip install git+git://github.com/conda/constructor@01209f0bf772c601dda062bc0167d0e00b70c6e4#egg=constructor --force --no-deps
 script:
   - constructor $NAME
 before_deploy:
