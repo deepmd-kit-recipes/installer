@@ -8,6 +8,7 @@ channels:
 - https://repo.anaconda.com/pkgs/main/
 
 specs:
+- conda
 - deepmd-kit {{ version }} *cpu
 - lammps-dp {{ version }} *cpu
 - liblammps-dp {{ version }} *cpu
