@@ -12,7 +12,7 @@ specs:
 - deepmd-kit {{ version }} *cuda{{ cuda_version }}_gpu
 - lammps-dp {{ version }} *cuda{{ cuda_version }}_gpu
 - liblammps-dp {{ version }} *cuda{{ cuda_version }}_gpu
-- pylammps {{ version }}
+- pylammps-dp {{ version }}
 
 ignore_duplicate_files: True
 

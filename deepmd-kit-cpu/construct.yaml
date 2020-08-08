@@ -11,7 +11,7 @@ specs:
 - deepmd-kit {{ version }} *cpu
 - lammps-dp {{ version }} *cpu
 - liblammps-dp {{ version }} *cpu
-- pylammps {{ version }}
+- pylammps-dp {{ version }}
 
 ignore_duplicate_files: True
 
