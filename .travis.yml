@@ -6,7 +6,7 @@ envs:
   global:
     - CONDA_DEPENDENCIES="constructor jinja2"
     - PYTHON_VERSION=3.8
-    - VERSION=v2.0.0.a0
+    - VERSION=2.0.0.a0
 matrix:
   include:
     - env:
