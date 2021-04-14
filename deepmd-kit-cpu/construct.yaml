@@ -5,6 +5,7 @@ version: {{ version }}-cpu
 
 channels:
 - https://conda.anaconda.org/deepmodeling
+- https://conda.anaconda.org/deepmodeling/label/dev
 - https://repo.anaconda.com/pkgs/main/
 
 specs:
