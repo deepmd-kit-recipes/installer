@@ -11,11 +11,11 @@ jobs:
         include:
           - name: deepmd-kit-cpu
           - name: deepmd-kit-gpu
-            cuda: 10.1
+            cuda: '10.1'
           - name: deepmd-kit-gpu
-            cuda: 10.0
+            cuda: '10.0'
           - name: deepmd-kit-gpu
-            cuda: 9.2
+            cuda: '9.2'
     steps:
     - uses: actions/checkout@master
     - uses: s-weigand/setup-conda@v1
