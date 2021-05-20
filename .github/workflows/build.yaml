@@ -4,9 +4,11 @@ on: push
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     name: Build ${{ matrix.name }} ${{ matrix.cuda }}
     strategy:
       matrix:
+        version: [ 2.0.0.b0 ]
         include:
           - name: deepmd-kit-cpu
           - name: deepmd-kit-gpu
@@ -20,7 +22,7 @@ jobs:
     - run: conda install constructor jinja2 -y
     - run: constructor ${{ matrix.name }}
       env:
-        VERSION: 2.0.0.b0
+        VERSION: {{ matrix.version }}
         CUDA_VERSION: ${{ matrix.cuda }}
     - name: Upload to release
       uses: softprops/action-gh-release@v1
@@ -29,3 +31,11 @@ jobs:
         files: deepmd-kit-*.sh
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload to release 2
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: deepmd-kit-*.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.DEEPMD_GITHUB_TOKEN }}
+        GITHUB_REPOSITORY: deepmodeling/deepmd-kit
