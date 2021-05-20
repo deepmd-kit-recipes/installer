@@ -22,7 +22,7 @@ jobs:
     - run: conda install constructor jinja2 -y
     - run: constructor ${{ matrix.name }}
       env:
-        VERSION: v2.0.0.b0
+        VERSION: 2.0.0.b0
         CUDA_VERSION: ${{ matrix.cuda }}
     - name: Upload to release
       uses: softprops/action-gh-release@v1
