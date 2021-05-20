@@ -6,7 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build ${{ matrix.name }} ${{ matrix.cuda }}
-    env:
     strategy:
       matrix:
         include:
