@@ -1,0 +1,31 @@
+name: Build
+
+on: push
+
+jobs:
+  build:
+    name: Build ${{ matrix.name }} ${{ matrix.cuda }}
+    strategy:
+      matrix:
+        include:
+          - name: deepmd-kit-cpu
+          - name: deepmd-kit-gpu
+            cuda: 10.1
+          - name: deepmd-kit-gpu
+            cuda: 10.0
+          - name: deepmd-kit-gpu
+            cuda: 9.2
+    steps:
+    - uses: actions/checkout@master
+    - run: conda install constructor jinja2 -y
+    - run: constructor ${{ matrix.name }}
+      env:
+        VERSION: 2.0.0.b0
+        CUDA_VERSION: ${{ matrix.cuda }}
+    - name: Upload to release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: deepmd-kit-*.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
