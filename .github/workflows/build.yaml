@@ -37,6 +37,6 @@ jobs:
       with:
         files: deepmd-kit-*.sh
         tag_name: v2.0.0.b0 
+        repository: deepmodeling/deepmd-kit
       env:
         GITHUB_TOKEN: ${{ secrets.DEEPMD_GITHUB_TOKEN }}
-        GITHUB_REPOSITORY: deepmodeling/deepmd-kit
