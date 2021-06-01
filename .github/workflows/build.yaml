@@ -11,6 +11,10 @@ jobs:
         include:
           - name: deepmd-kit-cpu
           - name: deepmd-kit-gpu
+            cuda: '11.1'
+          - name: deepmd-kit-gpu
+            cuda: '11.0'
+          - name: deepmd-kit-gpu
             cuda: '10.1'
           - name: deepmd-kit-gpu
             cuda: '10.0'
@@ -38,5 +42,6 @@ jobs:
         files: deepmd-kit-*.sh
         tag_name: v2.0.0.b0 
         repository: deepmodeling/deepmd-kit
+        prerelease: true
       env:
         GITHUB_TOKEN: ${{ secrets.DEEPMD_GITHUB_TOKEN }}
