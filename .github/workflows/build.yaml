@@ -29,7 +29,7 @@ jobs:
         VERSION: 2.0.0.b1
         CUDA_VERSION: ${{ matrix.cuda }}
     - run: split -a 1 -d -n 2 deepmd-kit-*.sh deepmd-kit-*.sh. && rm deepmd-kit-*.sh
-      if: matrix.cuda == '11.0' or matrix.cuda == '11.1'
+      if: matrix.cuda == '11.0' || matrix.cuda == '11.1'
     - name: Upload to release
       uses: softprops/action-gh-release@master
       if: startsWith(github.ref, 'refs/tags/')
