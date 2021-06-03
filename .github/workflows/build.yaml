@@ -10,8 +10,8 @@ jobs:
       matrix:
         include:
           - name: deepmd-kit-cpu
-          - name: deepmd-kit-gpu
-            cuda: '11.1'
+          #- name: deepmd-kit-gpu
+          #  cuda: '11.1'
           - name: deepmd-kit-gpu
             cuda: '11.0'
           - name: deepmd-kit-gpu
