@@ -24,7 +24,8 @@ jobs:
     - uses: actions/checkout@master
     - uses: s-weigand/setup-conda@v1
     - run: conda install constructor jinja2 -y
-    - run: constructor ${{ matrix.name }} --platform ${{ matrix.platform }}
+    - run: wget https://repo.anaconda.com/pkgs/misc/conda-execs/conda-latest-${{ matrix.platform }}.exe -O conda.exe
+    - run: constructor ${{ matrix.name }} --platform ${{ matrix.platform }} --conda-exe ./conda.exe
       env:
         VERSION: 2.0.0.b4
         CUDA_VERSION: ${{ matrix.cuda }}
