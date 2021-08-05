@@ -10,15 +10,21 @@ jobs:
       matrix:
         include:
           - name: deepmd-kit-cpu
+            platform: linux-64
           - name: deepmd-kit-gpu
             cuda: '11.3'
+            platform: linux-64
           - name: deepmd-kit-gpu
             cuda: '10.1'
+            platform: linux-64
+          - name: deepmd-kit-gpu
+            cuda: '10.2'
+            platform: linux-ppc64le
     steps:
     - uses: actions/checkout@master
     - uses: s-weigand/setup-conda@v1
     - run: conda install constructor jinja2 -y
-    - run: constructor ${{ matrix.name }}
+    - run: constructor ${{ matrix.name }} --platform ${{ matrix.platform }}
       env:
         VERSION: 2.0.0.b4
         CUDA_VERSION: ${{ matrix.cuda }}
