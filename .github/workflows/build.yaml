@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build ${{ matrix.name }} ${{ matrix.cuda }}
     strategy:
+      fail-fast: false
       matrix:
         include:
           - name: deepmd-kit-cpu
