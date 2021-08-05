@@ -18,9 +18,9 @@ jobs:
           - name: deepmd-kit-gpu
             cuda: '10.1'
             platform: linux-64
-          - name: deepmd-kit-gpu
-            cuda: '10.2'
-            platform: linux-ppc64le
+          #- name: deepmd-kit-gpu
+          #  cuda: '10.2'
+          #  platform: linux-ppc64le
     steps:
     - uses: actions/checkout@master
     - uses: s-weigand/setup-conda@v1
