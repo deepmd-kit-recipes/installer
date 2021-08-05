@@ -8,15 +8,14 @@ channels:
 - https://conda.anaconda.org/deepmodeling
 - https://conda.anaconda.org/deepmodeling/label/dev
 - https://deepmodeling.njzjz.win
-- https://conda.anaconda.org/nvidia
 - https://repo.anaconda.com/pkgs/main/
+- https://conda.anaconda.org/conda-forge  # [ppc64le] 
 
 specs:
 - conda
 - deepmd-kit {{ version }} *cuda{{ cuda_version }}_gpu
-- lammps-dp {{ version }} *cuda{{ cuda_version }}_gpu
-- liblammps-dp {{ version }} *cuda{{ cuda_version }}_gpu
-- pylammps-dp {{ version }}
+- libdeepmd {{ version }} *cuda{{ cuda_version }}_gpu
+- lammps-dp
 
 ignore_duplicate_files: True
 
