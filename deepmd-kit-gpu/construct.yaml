@@ -6,8 +6,7 @@ version: {{ version }}-cuda{{ cuda_version }}_gpu
 
 channels:
 - https://conda.anaconda.org/deepmodeling
-- https://conda.anaconda.org/deepmodeling/label/dev
-- https://deepmodeling.njzjz.win
+- https://conda.deepmodeling.org
 - https://repo.anaconda.com/pkgs/main/
 - https://conda.anaconda.org/conda-forge  # [ppc64le] 
 
