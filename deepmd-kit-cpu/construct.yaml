@@ -5,7 +5,7 @@ version: {{ version }}-cpu
 
 channels:
 - https://conda.anaconda.org/deepmodeling
-- https://conda.deepmodeling.org
+- https://conda.deepmodeling.org  # [ppc64le]
 - https://repo.anaconda.com/pkgs/main/
 - https://conda.anaconda.org/conda-forge  # [ppc64le] 
 
