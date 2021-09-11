@@ -13,6 +13,7 @@ specs:
 - deepmd-kit {{ version }} *cpu
 - libdeepmd {{ version }} *cpu
 - lammps-dp
+- horovod
 
 ignore_duplicate_files: True
 
