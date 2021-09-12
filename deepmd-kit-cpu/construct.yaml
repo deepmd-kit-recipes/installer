@@ -13,7 +13,8 @@ specs:
 - deepmd-kit {{ version }} *cpu
 - libdeepmd {{ version }} *cpu
 - lammps-dp
-- horovod
+- horovod  # [not ppc64le]
+- nocuda
 
 ignore_duplicate_files: True
 
