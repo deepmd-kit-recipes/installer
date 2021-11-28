@@ -10,12 +10,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: deepmd-kit-cpu
+          - name: deepmd-kit
             platform: linux-64
-          - name: deepmd-kit-gpu
+          - name: deepmd-kit
             cuda: '11.3'
             platform: linux-64
-          - name: deepmd-kit-gpu
+          - name: deepmd-kit
             cuda: '10.1'
             platform: linux-64
           #- name: deepmd-kit-gpu
@@ -30,6 +30,7 @@ jobs:
       env:
         VERSION: 2.0.3
         CUDA_VERSION: ${{ matrix.cuda }}
+        CONDA_OVERRIDE_CUDA: ${{ matrix.cuda }}
     - run: export NAME=`ls deepmd-kit-*.sh` && split -a 1 -d -n 2 ${NAME} ${NAME}. && rm deepmd-kit-*.sh
       if: matrix.cuda == '11.3'
     - name: Upload to release

@@ -1,7 +1,13 @@
 {% set version = os.environ.get("VERSION") %}
+{% set cuda_version = os.environ.get("CUDA_VERSION") %}
+{% if cuda_version == '' %}
+{% set variant = "cpu" %}
+{% else %}
+{% set variant = "cuda" + cuda_version + "_gpu" %}
+{% endif %}
 
 name: deepmd-kit
-version: {{ version }}-cpu
+version: {{ version }}-{{ variant }}
 
 channels:
 - https://conda.anaconda.org/deepmodeling
@@ -10,15 +16,17 @@ channels:
 - https://conda.anaconda.org/conda-forge  # [ppc64le] 
 
 specs:
-- deepmd-kit {{ version }} *cpu
-- libdeepmd {{ version }} *cpu
+- deepmd-kit {{ version }} *{{ variant }}
+- libdeepmd {{ version }} *{{ variant }}
 - lammps-dp
-- horovod  # [not ppc64le]
+- horovod
+{% if cuda_version == '' %}
 - nocuda
+{% endif %}
+- dpdata
 
 ignore_duplicate_files: True
 
 license_file: ../LICENSE
 
 company: DeepModeling
-
