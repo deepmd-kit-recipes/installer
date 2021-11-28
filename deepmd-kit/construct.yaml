@@ -22,7 +22,7 @@ specs:
 - horovod
 {% if cuda_version == '' %}
 - nocuda
-{% endid %}
+{% endif %}
 - dpdata
 
 ignore_duplicate_files: True
