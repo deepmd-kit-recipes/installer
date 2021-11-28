@@ -10,12 +10,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: deepmd-kit-cpu
+          - name: deepmd-kit
             platform: linux-64
-          - name: deepmd-kit-gpu
+          - name: deepmd-kit
             cuda: '11.3'
             platform: linux-64
-          - name: deepmd-kit-gpu
+          - name: deepmd-kit
             cuda: '10.1'
             platform: linux-64
           #- name: deepmd-kit-gpu
