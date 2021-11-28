@@ -20,7 +20,9 @@ specs:
 - libdeepmd {{ version }} *{{ variant }}
 - lammps-dp
 - horovod
-- nocuda  # [variant == 'cpu']
+{% if cuda_version == '' %}
+- nocuda
+{% endid %}
 - dpdata
 
 ignore_duplicate_files: True
