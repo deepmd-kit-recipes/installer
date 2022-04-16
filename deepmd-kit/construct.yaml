@@ -31,5 +31,5 @@ license_file: ../LICENSE
 
 company: DeepModeling
 
-pre_uninstall: pre_install.sh
+pre_install: pre_install.sh
 post_install: post_install.sh
