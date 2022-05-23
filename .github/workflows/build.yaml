@@ -13,10 +13,10 @@ jobs:
           - name: deepmd-kit
             platform: linux-64
           - name: deepmd-kit
-            cuda: '11.3'
+            cuda: '11.6'
             platform: linux-64
           - name: deepmd-kit
-            cuda: '10.1'
+            cuda: '10.2'
             platform: linux-64
           #- name: deepmd-kit-gpu
           #  cuda: '10.2'
