@@ -11,7 +11,7 @@ version: {{ version }}-{{ variant }}
 
 channels:
 - https://conda.anaconda.org/deepmodeling
-- https://conda.deepmodeling.org  # [ppc64le]
+- https://conda.deepmodeling.org
 - https://repo.anaconda.com/pkgs/main/
 - https://conda.anaconda.org/conda-forge  # [ppc64le] 
 
