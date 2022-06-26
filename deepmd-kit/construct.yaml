@@ -18,7 +18,7 @@ channels:
 specs:
 - deepmd-kit {{ version }} *{{ variant }}
 - libdeepmd {{ version }} *{{ variant }}
-- lammps-dp
+- lammps
 - horovod
 {% if cuda_version == '' %}
 - nocuda
