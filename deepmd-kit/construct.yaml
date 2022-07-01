@@ -24,6 +24,7 @@ specs:
 - nocuda
 {% endif %}
 - dpdata
+- conda
 
 ignore_duplicate_files: True
 
