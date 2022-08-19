@@ -1,7 +1,7 @@
 cat << EOF
 Please activate the environment before using the packages:
 
-/path/to/deepmd-kit/bin/conda activate /path/to/deepmd-kit
+source /path/to/deepmd-kit/bin/activate /path/to/deepmd-kit
 
 The following executable files have been installed:
 1. DeePMD-kit CLi: dp -h
