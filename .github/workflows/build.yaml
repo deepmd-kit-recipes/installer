@@ -24,6 +24,8 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: s-weigand/setup-conda@v1
+      with:
+        python-version: "3.10"
     - run: conda install constructor jinja2 -y
     #- run: wget https://repo.anaconda.com/pkgs/misc/conda-execs/conda-latest-${{ matrix.platform }}.exe -O conda.exe
     - run: constructor ${{ matrix.name }} --platform ${{ matrix.platform }} #--conda-exe ./conda.exe
