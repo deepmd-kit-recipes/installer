@@ -30,7 +30,7 @@ jobs:
     #- run: wget https://repo.anaconda.com/pkgs/misc/conda-execs/conda-latest-${{ matrix.platform }}.exe -O conda.exe
     - run: constructor ${{ matrix.name }} --platform ${{ matrix.platform }} #--conda-exe ./conda.exe
       env:
-        VERSION: 2.2.3
+        VERSION: 2.2.4
         CUDA_VERSION: ${{ matrix.cuda }}
         CONDA_OVERRIDE_CUDA: ${{ matrix.cuda }}
     - run: export NAME=`ls deepmd-kit-*.sh` && split -a 1 -d -n 2 ${NAME} ${NAME}. && rm deepmd-kit-*.sh
@@ -47,10 +47,10 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: deepmd-kit-*.sh*
-        tag_name: v2.2.3
+        tag_name: v2.2.4
         repository: deepmodeling/deepmd-kit
         prerelease: false
-        name: v2.2.3
+        name: v2.2.4
         append_body: true
       env:
         GITHUB_TOKEN: ${{ secrets.DEEPMD_GITHUB_TOKEN }}
