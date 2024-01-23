@@ -3,7 +3,7 @@
 {% if cuda_version == '' %}
 {% set variant = "cpu" %}
 {% else %}
-{% set variant = "cuda" + cuda_version.replace(".", "") %}
+{% set variant = "cuda" %}
 {% endif %}
 
 name: deepmd-kit
@@ -18,6 +18,9 @@ specs:
 - horovod * {{ variant }}*
 - dpdata
 - conda
+{% if cuda_version != '' %}
+- cuda-version {{ cuda_version }}
+{% endif %}
 
 ignore_duplicate_files: True
 
