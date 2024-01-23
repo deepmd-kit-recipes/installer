@@ -2,12 +2,14 @@
 {% set cuda_version = os.environ.get("CUDA_VERSION") %}
 {% if cuda_version == '' %}
 {% set variant = "cpu" %}
+{% set variant_version = "cpu" %}
 {% else %}
 {% set variant = "cuda" %}
+{% set variant_version = "cuda" + cuda_version.replace(".", "") %}
 {% endif %}
 
 name: deepmd-kit
-version: {{ version }}-{{ variant }}
+version: {{ version }}-{{ variant_version }}
 
 channels:
 - https://conda.anaconda.org/conda-forge
