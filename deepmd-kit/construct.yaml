@@ -21,6 +21,7 @@ specs:
 {% if cuda_version != '' %}
 - cuda-version {{ cuda_version }}
 {% endif %}
+- libblas * *mkl
 
 ignore_duplicate_files: True
 
