@@ -5,7 +5,7 @@ source /path/to/deepmd-kit/bin/activate /path/to/deepmd-kit
 
 The following executable files have been installed:
 1. DeePMD-kit CLi: dp -h
-2. LAMMPS: lmp_mpi -h
+2. LAMMPS: lmp -h
 3. DeePMD-kit i-Pi interface: dp_ipi
 4. MPICH: mpirun -h
 5. Horovod: horovod -h
