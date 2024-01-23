@@ -15,7 +15,7 @@ channels:
 specs:
 - deepmd-kit {{ version }} {{ variant }}*
 - lammps
-- horovod
+- horovod * {{ variant }}*
 - dpdata
 - conda
 
