@@ -22,7 +22,7 @@ jobs:
           #  cuda: '10.2'
           #  platform: linux-ppc64le
     env:
-      version: "2.2.8"
+      version: "2.2.9"
     steps:
     - uses: actions/checkout@v4
     - uses: s-weigand/setup-conda@v1
