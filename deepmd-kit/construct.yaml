@@ -25,7 +25,7 @@ specs:
 - cuda-version {{ cuda_version }}
 {% endif %}
 {% if cuda_version == '11.8' %}
-- https://conda.anaconda.org/njzjz/noarch/libdevice-hack-for-tensorflow-0.0.0-py_3.tar.bz2
+- njzjz/noarch::libdevice-hack-for-tensorflow==0.0.0=py_3
 {% endif %}
 - libblas * *mkl
 
