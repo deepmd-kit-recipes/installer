@@ -24,6 +24,8 @@ jobs:
     env:
       version: "3.0.0a0"
     steps:
+    - name: Delete huge unnecessary tools folder
+      run: rm -rf /opt/hostedtoolcache
     - uses: actions/checkout@v4
     - uses: s-weigand/setup-conda@v1
       with:
