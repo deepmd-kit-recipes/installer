@@ -13,6 +13,7 @@ version: {{ version }}-{{ variant_version }}
 
 channels:
 - https://conda.anaconda.org/conda-forge
+- https://conda.anaconda.org/conda-forge/label/deepmd-kit_dev
 
 specs:
 - deepmd-kit {{ version }} {{ variant }}*
