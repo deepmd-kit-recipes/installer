@@ -26,6 +26,8 @@ specs:
 - cuda-version {{ cuda_version }}
 {% endif %}
 {% if cuda_version == '11.8' %}
+# See https://github.com/deepmodeling/deepmd-kit/issues/3406
+- python<3.11
 - njzjz/noarch::libdevice-hack-for-tensorflow==0.0.0=py_3
 {% endif %}
 - libblas * *mkl
