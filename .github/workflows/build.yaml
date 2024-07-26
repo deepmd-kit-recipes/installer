@@ -22,7 +22,7 @@ jobs:
           #  cuda: '10.2'
           #  platform: linux-ppc64le
     env:
-      version: "3.0.0b1"
+      version: "3.0.0b2"
     steps:
     - name: Delete huge unnecessary tools folder
       run: rm -rf /opt/hostedtoolcache
