@@ -33,6 +33,14 @@ specs:
 - njzjz/noarch::libdevice-hack-for-tensorflow==0.0.0=py_3
 {% endif %}
 - libblas * *mkl
+{% if cuda_version != '11.8' %}
+# jax
+- jax >=0.4.33
+- jaxlib * {{ variant }}*
+- flax >=0.10.0
+- orbax-checkpoint
+- njzjz/linux-64::tensorstore
+{% endif %}
 
 ignore_duplicate_files: True
 
